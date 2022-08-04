@@ -22,7 +22,7 @@ public class TunnelReseed extends Thread {
         this.address = address;
         this.port = port;
 
-        int p = 9000;
+        int p = 20000;
         for( int i = 0; i < 5000; i++ ) {
             freeports.add(p);
             p++;
