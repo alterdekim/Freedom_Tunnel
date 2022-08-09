@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="json-20141113" level="project" />
+    <orderEntry type="library" name="bcprov-jdk15on-1.70" level="project" />
   </component>
 </module>

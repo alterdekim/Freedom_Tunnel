@@ -1,11 +1,13 @@
 package com.alterdekim.freedom.tunnel;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.security.Security;
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +16,7 @@ public class Main {
     }
 
     public Main() {
+        Security.addProvider(new BouncyCastleProvider());
         File config = new File("config.json");
         if( config.exists() ) {
             try {
@@ -47,8 +50,7 @@ public class Main {
             }
         }
         try {
-            Const.tunnelReseed = new TunnelReseed(Settings.reseed_server_url, 8081);
-            Const.tunnelReseed.start();
+            new Tunnel(Settings.insidePort);
         } catch ( Exception e ) {
             e.printStackTrace();
         }
